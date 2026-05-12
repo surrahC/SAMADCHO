@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/png" href="SAMADCHO/LOGO-SAMADCHO-02-01.png">
+
+    <title> Blog | Samadcho </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ede3d7;
+            font-family: 'Georgia', 'Times New Roman', 'Palatino', 'Charter', serif;
+            min-height: 100vh;
+            padding: 2rem 1.2rem;
+        }
+
+        /* MAIN FLEXIBLE LAYOUT: stack posts vertically */
+        .blog-multipost {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        /* menu row */
+        .menu-row {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto 0.5rem auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .plain-menu {
+            background: transparent;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 0.75rem 1.5rem;
+            list-style: none;
+            padding: 0.4rem 0.2rem 0.6rem 0.2rem;
+            border-bottom: 1px solid rgba(140, 100, 70, 0.2);
+        }
+
+        .plain-menu li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .plain-menu a {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #6b4c34;
+            background: #fffcf7;
+            padding: 0.45rem 1.1rem;
+            border-radius: 3rem;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            border: 1px solid #e9d7c8;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+        }
+
+        .plain-menu a:hover {
+            background-color: #f4ece3;
+            border-color: #c7aa89;
+            color: #3e2a1c;
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 680px) {
+            .menu-row { justify-content: center; }
+            .plain-menu { justify-content: center; gap: 0.6rem 1rem; }
+            .plain-menu a { padding: 0.35rem 0.9rem; font-size: 0.8rem; }
+        }
+
+        /* BLOG CARD - single post container */
+        .blog-card {
+            width: 100%;
+            background: #fffef7;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.03);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(200, 170, 140, 0.4);
+        }
+        .blog-card:hover {
+            box-shadow: 0 28px 42px -16px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-inner {
+            padding: 2rem 2rem 2rem 2rem;
+        }
+        @media (max-width: 680px) {
+            .blog-inner { padding: 1.5rem 1.2rem; }
+        }
+
+        .blog-header-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #ecdcca;
+            padding-bottom: 0.7rem;
+        }
+
+        .post-date {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', monospace;
+            background: #fef3e9;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            letter-spacing: 0.2px;
+            color: #6b4c34;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: inset 0 0 0 1px rgba(190, 150, 115, 0.2), 0 1px 2px rgba(0,0,0,0.02);
+        }
+        @media (max-width: 550px) {
+            .post-date { font-size: 0.7rem; padding: 0.3rem 1rem; }
+        }
+
+        .blog-headline {
+            margin-bottom: 1.8rem;
+            position: relative;
+        }
+        .blog-headline h1 {
+            font-size: 2.7rem;
+            font-weight: 500;
+            line-height: 1.2;
+            color: #2c241a;
+            letter-spacing: -0.01em;
+            border-left: 5px solid #bfa07e;
+            padding-left: 1.2rem;
+        }
+        @media (max-width: 580px) {
+            .blog-headline h1 { font-size: 1.9rem; padding-left: 1rem; }
+        }
+        .blog-headline::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: #e2cfbb;
+            margin-top: 0.9rem;
+            margin-left: 1.2rem;
+        }
+
+        .blog-content {
+            margin: 2rem 0 1.5rem 0;
+        }
+        .blog-text {
+            font-size: 1.18rem;
+            line-height: 1.68;
+            color: #3a2e24;
+            font-weight: 380;
+        }
+        .blog-text p {
+            margin-bottom: 1.35rem;
+        }
+        .blog-text p:first-of-type::first-letter {
+            font-size: 3.3rem;
+            font-weight: 450;
+            color: #9b7b5c;
+            float: left;
+            padding-right: 0.5rem;
+            line-height: 0.85;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .bangla-version {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            background: #fef8f2;
+            border-radius: 1.5rem;
+            padding: 1.6rem 1.8rem;
+            border-left: 4px solid #d6b58a;
+        }
+        .bangla-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: system-ui, 'Segoe UI', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #9b6f4b;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed #eadbcb;
+            padding-bottom: 0.55rem;
+        }
+        .bangla-text {
+            font-family: 'Noto Sans Bengali', 'Bangla', 'SolaimanLipi', 'Nikosh', 'Kalpurush', 'SutonnyMJ', 'Segoe UI', sans-serif;
+            font-size: 1.08rem;
+            line-height: 1.7;
+            color: #3e2c1f;
+        }
+        .bangla-text p {
+            margin-bottom: 1rem;
+        }
+        .bangla-text p:first-of-type::first-letter {
+            font-size: 2.8rem;
+            font-weight: 550;
+            color: #ad7f58;
+            float: left;
+            padding-right: 0.5rem;
+            line-height: 0.85;
+            font-family: 'Noto Sans Bengali', 'Bangla', serif;
+        }
+
+        .toggle-remark {
+            text-align: right;
+            font-size: 0.7rem;
+            font-family: monospace;
+            color: #b29378;
+            margin-top: 0.85rem;
+            border-top: 1px solid #eedfcb;
+            padding-top: 0.75rem;
+        }
+
+        .blog-footer {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #f0e4d8;
+            font-size: 0.7rem;
+            color: #ad927b;
+            text-align: right;
+            font-family: monospace;
+        }
+
+        ::selection {
+            background: #ddcdbb;
+            color: #2f241b;
+        }
+
+        @media (max-width: 550px) {
+            .blog-text { font-size: 1rem; line-height: 1.6; }
+            .bangla-text { font-size: 0.97rem; }
+            .bangla-version { padding: 1.2rem; }
+        }
+
+        .header-placeholder {
+            width: 0;
+            opacity: 0;
+        }
+        @media (max-width: 800px) {
+            .blog-multipost { gap: 2rem; }
+        }
+        @media (max-width: 550px) {
+            .blog-multipost { gap: 1.8rem; }
+        }
+
+        /* instruction helper for new posts */
+        .new-post-instruction {
+            background: #faf4ea;
+            border-radius: 2rem;
+            padding: 1.2rem 1.8rem;
+            text-align: center;
+            font-family: 'Inter', monospace;
+            font-size: 0.85rem;
+            color: #7c5f45;
+            border: 1px dashed #d4bc9f;
+            margin-top: 0.5rem;
+        }
+        .new-post-instruction code {
+            background: #e8ddcf;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #4f3822;
+        }
+    </style>
+</head>
+<body>
+
+<div style="max-width: 1200px; margin: 0 auto; width: 100%;">
+    <!-- menu row -->
+     <div class="logo-photo" style="max-width: 300px;" >
+        <img src="SAMADCHO/LOGO-SAMADCHO-01.png" alt="Logo" class="logo-img" style="width: 200px; height: 100px; float: left; margin: 0; padding: 0;">
+
+     </div>
+    <div class="menu-row" style="max-width: 300px; float: inline-end;">
+        <ul class="plain-menu" role="navigation" aria-label="প্রধান নেভিগেশন">
+            <li><a href="SAM-STORING.html">🌿 Elixir of peace -(শান্তির পাতন) </a></li>
+            <!----<li><a href="#">🍃 সাহিত্য আলাপ</a></li>
+            <li><a href="#">📚 সংগ্রহ</a></li>-->
+        </ul>
+    </div>
+
+    <!-- ============================================= -->
+    <!--   BLOG POSTS CONTAINER - each post is a SEPARATE .blog-card     -->
+    <!--   ✦ TO ADD A NEW POST: copy the entire <div class="blog-card"> block 
+              and paste it inside .blog-multipost after the previous posts.
+              Each card stands alone — no nested complexity.
+              Change title, date, english/bangla paragraphs freely.            -->
+    <!-- ============================================= -->
+    <div class="blog-multipost">
+        
+        <!-- ========== POST 1 : EXAMPLE / FIRST POST ========== -->
+        <div class="blog-card">
+            <div class="blog-inner">
+                <div class="blog-header-row">
+                    <div class="posting-meta">
+                        <div class="post-date">
+                            <span>📅</span> 
+                            <span>প্রকাশিত: ১১ মে, ২০২৬ | রাত ৮:১৫</span> <span style="color: red;">Active</span>
+                        </div>
+                    </div>
+                    <div class="header-placeholder"></div>
+                </div>
+                
+                <div class="blog-headline">
+                    <h1>The Quiet Garden of Words <br> <span style="font-size: 1.4rem; color:#9b7b5c; display: inline-block; margin-top: 0.3rem;">শব্দের নীরব উদ্যান </span> <Span style="font-size: 1.4rem; color:#9b7b5c; display: inline-block; margin-top: 0.3rem;"> ---- Samadur Rahman</Span> </h1>
+                </div>
+
+                <div class="blog-content">
+                    <div class="blog-text">
+                        <p>There exists a timeless craft in the art of stillness—where each sentence, like a slow rain, nurtures the soil of imagination. In an age of endless scroll, returning to the unhurried paragraph becomes a gentle rebellion. Here, between the headline and the closing line, we invite reflection without distraction. Reading, after all, is the softest form of listening.</p>
+                        <p>Words, when allowed to breathe, create invisible architecture. They carve corners for thought, windows for wonder. This blog holds no buttons, no flashing calls; only the honest companionship of prose and the quiet rhythm of the clock above. Each visit is an encounter with language unadorned—just the resonance of meaning, like a bell sounding once and fading into memory.</p>
+                        <p>Let your eyes rest on these lines. Observe how the letters form bridges between your inner world and the texture of another's mind. In this space, time is not a commodity but a companion — counted gently by the awareness of presence, reminding us that every moment spent reading is both fleeting and eternal. May you find what you didn't know you were seeking.</p>
+                    </div>
+                </div>
+
+                <div class="bangla-version">
+                    <div class="bangla-label">
+                        <span>📖</span> বাংলা অনুবাদ | শব্দের গভীরতা
+                    </div>
+                    <div class="bangla-text">
+                        <p>নীরবতার শিল্পে এক চিরন্তন কারুকাজ লুকিয়ে আছে—যেখানে প্রতিটি বাক্য, ধীর বৃষ্টির মতো, কল্পনার মাটিকে পুষ্ট করে। অবিরাম স্ক্রোলের যুগে, তাড়াহুড়ো ছাড়া অনুচ্ছেদে ফিরে আসা এক মৃদু বিদ্রোহ। এই ব্লগে শিরোনাম আর সমাপ্তির মাঝে, আমরা কোনও বিভ্রান্তি ছাড়াই প্রতিফলনের আমন্ত্রণ জানাই। পাঠ, সর্বোপরি, শ্রবণের সবচেয়ে কোমল রূপ, যেখানে মনের বাগান সজীব হয়ে ওঠে।</p>
+                        <p>শব্দগুলি, যখন নিঃশ্বাস নিতে দেওয়া হয়, তখন অদৃশ্য স্থাপত্য নির্মাণ করে। তারা চিন্তার জন্য কোণ তৈরি করে, বিস্ময়ের জন্য জানালা। এই জায়গাটিতে কোনো বোতাম বা উজ্জ্বল আহ্বান নেই; কেবল গদ্যের সৎ সঙ্গতি এবং উপরের ঘড়ির শান্ত ছন্দ। প্রতিটি পদচারণা অনাঙ্কিত ভাষার সাথে এক সাক্ষাৎ—শুধু অর্থের অনুরণন, যেমন একটি ঘণ্টা একবার বেজে ওঠে এবং স্মৃতিতে মিলিয়ে যায়, তেমনি শব্দের উদ্যান চিরজাগরূক রাখে আত্মাকে।</p>
+                        <p>আপনার দৃষ্টি এই লাইনগুলিতে বিশ্রাম নিতে দিন। লক্ষ্য করুন কীভাবে অক্ষরগুলি আপনার অভ্যন্তরীণ জগত এবং অন্যের মনের জমিনের মধ্যে সেতু নির্মাণ করে। এই স্থানে সময় কোনো পণ্য নয়, বরং একজন নিভৃতচারী সঙ্গী — স্মৃতির মৃদু স্পর্শ, স্থির তারিখে লিপিবদ্ধ স্নেহময় উপহার। আশা করি, আপনি যা খুঁজতে জানতেন না, তা এখানে খুঁজে পাবেন; মনের উদ্যানে শান্তির ফুল ফুটবে।</p>
+                    </div>
+                    <div class="toggle-remark">
+                        ✦ পূর্ণাঙ্গ বাংলা ও ইংরেজি পাঠ · নান্দনিক নকশা ✦
+                    </div>
+                </div>
+
+                <div class="blog-footer">
+                    ✦ সম্পূর্ণ পঠনযোগ্য · সব ডিভাইসে প্রতিক্রিয়াশীল ✦<br>
+                    <span style="font-size: 0.65rem;">শান্তির পাতন — প্রথম প্রকাশ</span>
+                </div>
+            </div>
+        </div>
+
+      <!-----------  ---- POST 2  ------
+
+
+        <div class="blog-card">
+            <div class="blog-inner">
+                <div class="blog-header-row">
+                    <div class="posting-meta">
+                        <div class="post-date">
+                            <span>📅</span> 
+                            <span>প্রকাশিত: ১৩ মে, ২০২৬ | সকাল ১০:২২</span>
+                        </div>
+                    </div>
+                    <div class="header-placeholder"></div>
+                </div>
+                
+                <div class="blog-headline">
+                    <h1>Twilight on the Page <br> <span style="font-size: 1.4rem; color:#9b7b5c; display: inline-block; margin-top: 0.3rem;">পাতার গোধূলি</span></h1>
+                </div>
+
+                <div class="blog-content">
+                    <div class="blog-text">
+                        <p>At the edge of evening, when the last gold brushes the horizon, the act of writing becomes something sacred—a bridge between the visible and the felt. There is a distinct silence that only readers understand: the rustle of pages turning, the slight weight of a book in hand. This blog is built upon that quiet reverence, where words are not commodities but invitations to pause.</p>
+                        <p>To read slowly is to reclaim time. Every sentence becomes a meditation, each metaphor a small door into another world. Like a walk through an old forest, the path unfolds gradually, revealing roots of meaning beneath the surface. We honor that journey here, with no interruption, no urgency—only the texture of thoughtful prose and the echo of curated silence.</p>
+                        <p>Close your eyes for a moment after finishing these lines. Feel how the language lingers, how certain images ripple outward. That lingering is the true reward of literature—a soft imprint left on the self. May your own reflections deepen with every word encountered, and may this space remain a refuge for unhurried minds.</p>
+                    </div>
+                </div>
+
+                <div class="bangla-version">
+                    <div class="bangla-label">
+                        <span>🌙</span> বাংলা অনুবাদ | গোধূলি ও পৃষ্ঠা
+                    </div>
+                    <div class="bangla-text">
+                        <p>সন্ধ্যার প্রান্তে, যখন শেষ সোনালি রেখা দিগন্ত ছুঁয়ে যায়, লেখার কাজটা পবিত্র রূপ ধারণ করে—দৃশ্য আর অনুভবের মধ্যে এক সেতু। পাঠকমাত্রই জানেন এক বিশেষ নীরবতা: পৃষ্ঠা ওলটানোর মৃদু শব্দ, হাতে বইয়ের হালকা ওজন। এই ব্লগটি সেই শান্ত শ্রদ্ধার ওপর দাঁড়িয়ে, যেখানে শব্দ পণ্য নয়, বরং থমকে দাঁড়ানোর আমন্ত্রণ।</p>
+                        <p>ধীরে পড়া মানে সময়কে ফিরে পাওয়া। প্রতিটি বাক্য ধ্যানে পরিণত হয়, প্রতিটি রূপক যেন অন্য জগতের দরজা। যেমন পুরনো অরণ্যে পদচারণা, আস্তে আস্তে পথ উন্মোচিত হয়, ভূপৃষ্ঠের নিচে অর্থের শিকড় দেখা যায়। আমরা সেই যাত্রাকে সম্মান জানাই, কোনো বাধা বা জরুরি ভাবনা ছাড়া—শুধু বিচারপ্রবণ গদ্যের জমিন আর নির্বাচিত নীরবতার প্রতিধ্বনি।</p>
+                        <p>এই লাইনগুলি শেষ করে একবার চোখ বন্ধ করুন। অনুভব করুন কীভাবে ভাষা থেকে যায়, কিছু চিত্র কিভাবে বাইরের দিকে তরঙ্গায়িত হয়। সেই লেগে থাকাটাই সাহিত্যের আসল পুরস্কার—আত্মার ওপর মৃদু ছাপ। আশা করি আপনার নিজস্ব প্রতিফলন প্রতিটি কথার সাথে গভীরতর হবে, এবং এই জায়গাটি অহস্তক্ষেপিত চিন্তার জন্য এক অভয়ারণ্য হয়ে থাকবে।</p>
+                    </div>
+                    <div class="toggle-remark">
+                        ✦ গোধূলির আভা · নিরবধি বাংলা গদ্য ✦
+                    </div>
+                </div>
+
+                <div class="blog-footer">
+                    ✦ প্রতিটি পোস্ট স্বতন্ত্র · ঐকতানিক রূপ ✦<br>
+                    <span style="font-size: 0.65rem;">দ্বিতীয় প্রকাশনা · শব্দের অন্যরকম বিন্যাস</span>
+                </div>
+            </div>
+        </div>
+
+            ------POST 3 -------
+
+
+        <div class="blog-card">
+            <div class="blog-inner">
+                <div class="blog-header-row">
+                    <div class="posting-meta">
+                        <div class="post-date">
+                            <span>📅</span> 
+                            <span>প্রকাশিত: ১৬ মে, ২০২৬ | বিকেল ৪:০৭</span>
+                        </div>
+                    </div>
+                    <div class="header-placeholder"></div>
+                </div>
+                
+                <div class="blog-headline">
+                    <h1>The Ink of Memory <br> <span style="font-size: 1.4rem; color:#9b7b5c; display: inline-block; margin-top: 0.3rem;">স্মৃতির কালি</span></h1>
+                </div>
+
+                <div class="blog-content">
+                    <div class="blog-text">
+                        <p>Memory writes itself in invisible ink, surfacing when the light is just right—a phrase overheard, the scent of old paper, a sudden rainfall. This blog honors those delicate inscriptions. Without the haste of modern feeds, each reflection stays anchored in its own time, giving readers permission to sink into layers of association and quiet joy.</p>
+                        <p>We often forget that reading is an act of co-creation. The writer offers a skeleton, but the reader breathes life into the bones. In these unhurried spaces, you become both witness and weaver, stitching together meaning from threads of imagination. No algorithm can replicate that intimacy; it blooms only in the patient corners of a conscious mind.</p>
+                        <p>May this post remind you of the stories you carry within—the half-remembered verses, the childhood afternoons spent with a worn novel. Literature, at its core, is a conversation across time. And you are always an honored participant. Return whenever your spirit craves the slow cadence of authentic words.</p>
+                    </div>
+                </div>
+
+                <div class="bangla-version">
+                    <div class="bangla-label">
+                        <span>🖋️</span> বাংলা অনুবাদ | স্মৃতি ও কালির বন্ধন
+                    </div>
+                    <div class="bangla-text">
+                        <p>স্মৃতি নিজেকে অদৃশ্য কালিতে লিখে, তখন ভেসে ওঠে যখন আলো ঠিক থাকে—শোনা কোনো বাক্যাংশ, পুরনো কাগজের গন্ধ, হঠাৎ বৃষ্টি। এই ব্লগ সেই কোমল লিখনকে সম্মান জানায়। আধুনিক ফিডের তাড়া ছাড়া, প্রতিটি প্রতিফলন নিজের সময়ে নোঙর করে, পাঠককে সংযোগ ও শান্ত আনন্দের স্তরে নিমজ্জিত হতে দেয়।</p>
+                        <p>আমরা প্রায়ই ভুলে যাই যে পড়া হলো সহ-সৃষ্টির একটি কাজ। লেখক কংকাল দেয়, কিন্তু পাঠক প্রাণ সঞ্চার করে হাড়ে। এই অহস্তক্ষেপিত জায়গাগুলিতে আপনি সাক্ষী ও বয়ন শিল্পী উভয়ই, কল্পনার তন্তু থেকে অর্থ একত্রে সেলাই করেন। কোনো অ্যালগরিদম সে ঘনিষ্ঠতা অনুকরণ করতে পারে না; এটি কেবল সচেতন মনের ধৈর্যশীল কোণে প্রস্ফুটিত হয়।</p>
+                        <p>আশা করি এই পোস্ট আপনাকে আপনার ভেতরে বহন করা গল্পগুলির কথা স্মরণ করিয়ে দেবে—অর্ধ-মনে থাকা কবিতার পঙ্ক্তি, জীর্ণ উপন্যাস নিয়ে কাটানো শৈশবের বিকেল। সাহিত্য, মূলত, সময়ের মধ্যকার এক কথোপকথন। আর আপনি সর্বদাই একজন সম্মানিত অংশগ্রহণকারী। যখনই আপনার আত্মা প্রকৃত শব্দের ধীর ছন্দ চায়, ফিরে আসুন।</p>
+                    </div>
+                    <div class="toggle-remark">
+                        ✦ স্মৃতির অলিন্দে · নিরবধি ভাষ্য ✦
+                    </div>
+                </div>
+
+                <div class="blog-footer">
+                    ✦ অনুভবের পরতে পরতে · সাহিত্যিক আভা ✦<br>
+                    <span style="font-size: 0.65rem;">তৃতীয় পোস্ট — স্মৃতির কালি ও কলমের ছোঁয়া</span>
+                </div>
+            </div>
+        </div>
+
+
+        ----- POST 3 : THIRD --------
+
+
+        <div class="blog-card">
+            <div class="blog-inner">
+                <div class="blog-header-row">
+                    <div class="posting-meta">
+                        <div class="post-date">
+                            <span>📅</span> 
+                            <span>প্রকাশিত: ১৬ মে, ২০২৬ | বিকেল ৪:০৭</span>
+                        </div>
+                    </div>
+                    <div class="header-placeholder"></div>
+                </div>
+                
+                <div class="blog-headline">
+                    <h1>The Ink of Memory <br> <span style="font-size: 1.4rem; color:#9b7b5c; display: inline-block; margin-top: 0.3rem;">স্মৃতির কালি</span></h1>
+                </div>
+
+                <div class="blog-content">
+                    <div class="blog-text">
+                        <p>Memory writes itself in invisible ink, surfacing when the light is just right—a phrase overheard, the scent of old paper, a sudden rainfall. This blog honors those delicate inscriptions. Without the haste of modern feeds, each reflection stays anchored in its own time, giving readers permission to sink into layers of association and quiet joy.</p>
+                        <p>We often forget that reading is an act of co-creation. The writer offers a skeleton, but the reader breathes life into the bones. In these unhurried spaces, you become both witness and weaver, stitching together meaning from threads of imagination. No algorithm can replicate that intimacy; it blooms only in the patient corners of a conscious mind.</p>
+                        <p>May this post remind you of the stories you carry within—the half-remembered verses, the childhood afternoons spent with a worn novel. Literature, at its core, is a conversation across time. And you are always an honored participant. Return whenever your spirit craves the slow cadence of authentic words.</p>
+                    </div>
+                </div>
+
+                <div class="bangla-version">
+                    <div class="bangla-label">
+                        <span>🖋️</span> বাংলা অনুবাদ | স্মৃতি ও কালির বন্ধন
+                    </div>
+                    <div class="bangla-text">
+                        <p>স্মৃতি নিজেকে অদৃশ্য কালিতে লিখে, তখন ভেসে ওঠে যখন আলো ঠিক থাকে—শোনা কোনো বাক্যাংশ, পুরনো কাগজের গন্ধ, হঠাৎ বৃষ্টি। এই ব্লগ সেই কোমল লিখনকে সম্মান জানায়। আধুনিক ফিডের তাড়া ছাড়া, প্রতিটি প্রতিফলন নিজের সময়ে নোঙর করে, পাঠককে সংযোগ ও শান্ত আনন্দের স্তরে নিমজ্জিত হতে দেয়।</p>
+                        <p>আমরা প্রায়ই ভুলে যাই যে পড়া হলো সহ-সৃষ্টির একটি কাজ। লেখক কংকাল দেয়, কিন্তু পাঠক প্রাণ সঞ্চার করে হাড়ে। এই অহস্তক্ষেপিত জায়গাগুলিতে আপনি সাক্ষী ও বয়ন শিল্পী উভয়ই, কল্পনার তন্তু থেকে অর্থ একত্রে সেলাই করেন। কোনো অ্যালগরিদম সে ঘনিষ্ঠতা অনুকরণ করতে পারে না; এটি কেবল সচেতন মনের ধৈর্যশীল কোণে প্রস্ফুটিত হয়।</p>
+                        <p>আশা করি এই পোস্ট আপনাকে আপনার ভেতরে বহন করা গল্পগুলির কথা স্মরণ করিয়ে দেবে—অর্ধ-মনে থাকা কবিতার পঙ্ক্তি, জীর্ণ উপন্যাস নিয়ে কাটানো শৈশবের বিকেল। সাহিত্য, মূলত, সময়ের মধ্যকার এক কথোপকথন। আর আপনি সর্বদাই একজন সম্মানিত অংশগ্রহণকারী। যখনই আপনার আত্মা প্রকৃত শব্দের ধীর ছন্দ চায়, ফিরে আসুন।</p>
+                    </div>
+                    <div class="toggle-remark">
+                        ✦ স্মৃতির অলিন্দে · নিরবধি ভাষ্য ✦
+                    </div>
+                </div>
+
+                <div class="blog-footer">
+                    ✦ অনুভবের পরতে পরতে · সাহিত্যিক আভা ✦<br>
+                    <span style="font-size: 0.65rem;">তৃতীয় পোস্ট — স্মৃতির কালি ও কলমের ছোঁয়া</span>
+                </div>
+            </div>
+        </div>
+    -->
+
+       
+
+    </div>
+
+</div>
+
+
+<script>
+    (function() {
+        const allMenuLinks = document.querySelectorAll('.plain-menu a');
+        allMenuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href === '#') {
+                    e.preventDefault();
+                }
+            });
+        });
+        // optional: smooth any anchor behaviour
+        console.log("কালজয়ী ব্লগ — প্রতিটি পোস্ট আলাদা বক্সে, সহজে নতুন পোস্ট যোগ করা যায়।");
+    })();
+</script>
+</body>
+</html>
