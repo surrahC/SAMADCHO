@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TENCEL™ · Lenzing · production & fibre guide</title>
+  <style>
+    /* white background, maroon text – strict palette */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #800000;               /* maroon */
+      font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;          
+    }
+
+    /* all text elements inherit maroon, but we keep borders, tables consistent */
+    h1, h2, h3, h4, p, li, th, td, figcaption, .footnote, .reference, .disclaimer {
+      color: #800000;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      border-bottom: 3px solid #800000;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin-top: 2.2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #800000;
+      padding-bottom: 0.3rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 1.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    /* compact lists */
+    ul, ol {
+      margin: 0.5rem 0 1rem 1.8rem;
+    }
+
+    li {
+      margin-bottom: 0.3rem;
+    }
+
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      border: 1.5px solid #800000;
+      padding: 0.7rem 0.9rem;
+      text-align: left;
+      vertical-align: top;
+      color: #800000;
+      background-color: #ffffff;
+    }
+
+    th {
+      background-color: #ffffff;
+      font-weight: 700;
+    }
+
+    /* card-like sections for A, B, C, D */
+    .section-card {
+      border-left: 5px solid #800000;
+      padding-left: 1.2rem;
+      margin: 1.8rem 0 1.2rem 0;
+    }
+
+    .highlight-box {
+      border: 1.5px solid #800000;
+      background: #ffffff;
+      padding: 1.2rem 1.5rem;
+      margin: 1.8rem 0;
+      border-radius: 0;           /* clean, no radius */
+    }
+
+    .comparison-note {
+      font-style: italic;
+      border-left: 4px solid #800000;
+      padding-left: 1rem;
+      margin: 1rem 0 1.2rem 0;
+    }
+
+    .reference {
+      font-size: 0.85rem;
+      margin-top: 0.4rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.85;
+      word-break: break-word;
+    }
+
+    .reference a {
+      color: #800000;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .reference a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    /* generic maroon links */
+    a {
+      color: #800000;
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+    }
+
+    a:hover {
+      text-decoration-thickness: 2.5px;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid #800000;
+      margin: 2rem 0;
+    }
+
+    /* small label / badge */
+    .brand-note {
+      background: #ffffff;
+      border: 1.5px solid #800000;
+      padding: 0.6rem 1rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 1.2rem;
+    }
+
+    .disclaimer {
+      border-top: 2px solid #800000;
+      padding-top: 1.2rem;
+      margin-top: 2.2rem;
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    /* spacing utilities */
+    .mt-1 { margin-top: 0.5rem; }
+    .mt-2 { margin-top: 1rem; }
+    .mb-0 { margin-bottom: 0; }
+    .indent-list {
+      margin-left: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Title / brand note -->
+  <h1>TENCEL™ · Lenzing · production & fibre guide</h1>
+
+  <p><strong>TENCEL™ is a premium textile fibre brand owned by the Austrian company Lenzing AG.</strong> It represents a range of regenerated cellulose fibres, primarily TENCEL™ Lyocell and TENCEL™ Modal.</p>
+  <p>These fibres are manufactured using cellulose obtained mainly from wood pulp. The cellulose is processed and regenerated into textile fibres through industrial manufacturing processes.</p>
+  <p>TENCEL™ fibres are used in clothing, home textiles and other textile applications because of their softness, smoothness, moisture management and versatility.</p>
+  <p>Unlike natural fibres such as cotton, TENCEL™ fibres do not grow directly as textile fibres in nature. Instead, they are manufactured from naturally occurring cellulose.</p>
+
+  <!-- Key points box -->
+  <div class="highlight-box">
+    <h3 style="margin-top:0;">Key points</h3>
+    <ul style="margin-bottom:0.2rem;">
+      <li><strong>Brand owner:</strong> Lenzing AG, Austria.</li>
+      <li><strong>Main fibre types:</strong> Lyocell and Modal.</li>
+      <li><strong>Main raw material:</strong> Wood-based cellulose.</li>
+      <li><strong>Applications:</strong> Clothing, bedding, home textiles and fashion products.</li>
+    </ul>
+    <p style="margin-top:0.8rem; margin-bottom:0;">TENCEL™ is not a generic fibre type; it is a registered brand trademark owned by Lenzing AG.</p>
+  </div>
+
+  <p>The generic fibre names are Lyocell and Modal, whereas TENCEL™ identifies Lenzing's branded versions of these fibres.</p>
+  <p><strong>For example:</strong></p>
+  <ul>
+    <li><strong>Lyocell</strong> = Generic fibre name.</li>
+    <li><strong>Modal</strong> = Generic fibre name.</li>
+    <li><strong>TENCEL™ Lyocell</strong> = Lenzing's branded Lyocell.</li>
+    <li><strong>TENCEL™ Modal</strong> = Lenzing's branded Modal.</li>
+  </ul>
+  <p>This distinction is important in the textile industry because different manufacturers can produce generic Lyocell fibres, but only authorised Lenzing products can be marketed under the TENCEL™ brand.</p>
+
+  <p class="reference">Reference: <a href="https://brandingservice.lenzingpro.com/medias/TENCEL-Brand-Protection-Leaflet.pdf?attachment=true&context=bWFzdGVyfHJvb3R8MzY5ODg1fGFwcGxpY2F0aW9uL3BkZnxhR0kzTDJneVpTODVOVEl3TnpnNE5ETTVNRGN3TDFSRlRrTkZURjlDY21GdVpDQlFjbTkwWldOMGFXOXVYMHhsWVdac1pYUXVjR1JtfDk5MmU0YWI0Mzc3ZTMzZDg0ZjFmZThiMTIyYjRlMWRkMjEzODBjZDIzNTI4OGIzMTkyMzdmMDlhZGE2ZmM3MjU">TENCEL Brand Protection Leaflet (PDF)</a></p>
+
+  <hr>
+
+  <!-- ===== Lenzing production differentiation ===== -->
+  <h2>Lenzing differentiates its production process</h2>
+  <p>Lenzing differentiates its production process through its solvent recovery technology, resource-efficient manufacturing systems, responsible raw-material sourcing and efforts to reduce environmental impacts. There are four important aspects.</p>
+
+  <!-- A. Closed-loop -->
+  <div class="section-card">
+    <h3>A. Closed-loop production system</h3>
+    <p>One of the most important features of TENCEL™ Lyocell production is its closed-loop manufacturing process.</p>
+    <p><strong>In this process:</strong></p>
+    <ol>
+      <li>Wood pulp is mixed with water and NMMO solvent.</li>
+      <li>The cellulose dissolves to form a spinning solution.</li>
+      <li>The solution passes through spinnerets to form fibres.</li>
+      <li>The fibres are washed and processed.</li>
+      <li>The solvent is recovered and reused in the production process.</li>
+    </ol>
+    <p>According to Lenzing, more than <strong>99.8%</strong> of the solvent used in its Lyocell production process is recovered and fed back into the production cycle.</p>
+    <p class="reference">reflawn.com</p>
+  </div>
+
+  <!-- B. Chemical recovery -->
+  <div class="section-card">
+    <h3>B. Chemical recovery and resource efficiency</h3>
+    <p>Lenzing also applies resource-efficient technologies in Modal production. The company focuses on recovering and reusing process chemicals, reducing waste and controlling emissions.</p>
+    <p>It is important to distinguish this from Lyocell production: the two fibres use different manufacturing processes, so their chemical recovery systems are not identical.</p>
+  </div>
+
+  <!-- C. Responsible wood sourcing -->
+  <div class="section-card">
+    <h3>C. Responsible wood sourcing</h3>
+    <p>Lenzing uses wood from certified or controlled sources for its relevant branded fibres. This approach aims to reduce the risks associated with irresponsible forestry, deforestation and damage to natural ecosystems.</p>
+  </div>
+
+  <!-- D. Lower environmental impact -->
+  <div class="section-card">
+    <h3>D. Lower environmental impact</h3>
+    <p>Lenzing reports that TENCEL™ Lyocell and Modal fibres are produced with at least <strong>50% lower carbon emissions and water consumption</strong> compared with generic Lyocell and Modal fibres, respectively.</p>
+    <p class="comparison-note">This is a manufacturer-reported comparison, not a universal finding for every Lyocell or Modal producer.</p>
+  </div>
+
+  <!-- References for Lenzing part -->
+  <div class="reference">
+    <strong>References:</strong>
+    <ul style="margin-top:0.3rem; margin-bottom:0.2rem;">
+      <li>Lenzing – TENCEL™ Lyocell Production</li>
+      <li>Lenzing – Production Technology</li>
+      <li>TENCEL – Fibre Production and Environmental Benefits</li>
+      <li>Lenzing – Responsible Production, April 2024</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <!-- ===== Generic Lyocell vs TENCEL Lyocell ===== -->
+  <h2>Generic Lyocell vs. TENCEL™ Lyocell</h2>
+  <p><strong>Generic Lyocell</strong> is a category of regenerated cellulose fibre produced through a direct solvent-spinning process. It can be manufactured by different companies using different production technologies and sourcing practices.</p>
+  <p><strong>TENCEL™ Lyocell</strong>, on the other hand, is Lenzing's branded version of Lyocell. It is produced using Lenzing's specific manufacturing technologies, wood-sourcing requirements and production standards.</p>
+  <p>The main difference is not necessarily the basic fibre chemistry, but the manufacturer, production system, sourcing controls and documented product specifications.</p>
+
+  <table>
+    <thead>
+      <tr><th>Comparison</th><th>Generic Lyocell</th><th>TENCEL™ Lyocell</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Name</td><td>Generic fibre category</td><td>Registered brand</td></tr>
+      <tr><td>Manufacturer</td><td>Different manufacturers</td><td>Lenzing AG</td></tr>
+      <tr><td>Raw material</td><td>Usually dissolving wood pulp</td><td>Certified or controlled wood sources</td></tr>
+      <tr><td>Production</td><td>Lyocell solvent-spinning process</td><td>Lenzing's specific production technology</td></tr>
+      <tr><td>Solvent recovery</td><td>Depends on manufacturer</td><td>Lenzing reports over 99.8% recovery</td></tr>
+      <tr><td>Traceability</td><td>Depends on producer</td><td>Lenzing provides fibre identification and traceability solutions</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>An important point</strong> is that generic Lyocell is not necessarily environmentally harmful or lower quality. Its environmental performance depends on the individual manufacturer's production process and raw-material sourcing.</p>
+  <p>Lenzing claims that its TENCEL™ Lyocell fibres have at least 50% lower carbon emissions and water consumption compared with generic Lyocell. This is a company-reported comparison, so its methodology and system boundaries should be checked before using it as an independent conclusion.</p>
+
+  <div class="reference">
+    <strong>References:</strong>
+    <ul style="margin-top:0.3rem;">
+      <li>Lenzing – TENCEL™ Lyocell (<a href="https://www.lenzing.com/products/textile-fibers/tenceltm-lyocell/">https://www.lenzing.com/products/textile-fibers/tenceltm-lyocell/</a>)</li>
+      <li>TENCEL – Fibre Information (<a href="https://www.tencel.com/fibers">https://www.tencel.com/fibers</a>)</li>
+      <li>Lenzing – Fibre Production Technology (<a href="https://www.lenzing.com/technology-production/technologies/">https://www.lenzing.com/technology-production/technologies/</a>)</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <!-- ===== Lyocell and Modal properties ===== -->
+  <h2>Lyocell and Modal: regenerated cellulose fibres</h2>
+  <p>Lyocell and Modal are both regenerated cellulose fibres. This means they are manufactured by dissolving cellulose obtained from plant-based materials and regenerating it into textile fibres. However, they differ in their manufacturing processes and physical properties.</p>
+
+  <!-- A. Lyocell -->
+  <h3>A. Lyocell</h3>
+  <p>Lyocell is produced by directly dissolving cellulose in an organic solvent, commonly N-Methylmorpholine-N-oxide (NMMO). The dissolved cellulose is then passed through a spinneret to form fibres.</p>
+  <p><strong>Main characteristics:</strong></p>
+  <ul>
+    <li>High tensile strength, including when wet.</li>
+    <li>Soft and smooth texture.</li>
+    <li>Good moisture absorption.</li>
+    <li>Suitable for clothing, denim and home textiles.</li>
+  </ul>
+
+  <!-- B. Modal -->
+  <h3>B. Modal</h3>
+  <p>Modal is a type of regenerated cellulose fibre generally manufactured through a modified viscose process. It is designed to provide high breaking strength and high wet modulus, meaning it maintains its strength and dimensional stability relatively well when wet.</p>
+  <p><strong>Main characteristics:</strong></p>
+  <ul>
+    <li>Excellent softness.</li>
+    <li>Good moisture absorption.</li>
+    <li>Good dimensional stability.</li>
+    <li>Maintains softness after repeated washing.</li>
+    <li>Commonly used in underwear, sportswear and everyday clothing.</li>
+  </ul>
+
+  <!-- Comparison table Lyocell vs Modal -->
+  <h3>Comparison table: Lyocell vs Modal</h3>
+  <table>
+    <thead>
+      <tr><th>Characteristics</th><th>Lyocell</th><th>Modal</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Fibre category</td><td>Regenerated cellulose</td><td>Regenerated cellulose</td></tr>
+      <tr><td>Production process</td><td>Direct solvent dissolution</td><td>Modified viscose process</td></tr>
+      <tr><td>Common solvent system</td><td>NMMO</td><td>Viscose-based chemical process</td></tr>
+      <tr><td>Wet strength</td><td>Generally high</td><td>Improved over conventional viscose</td></tr>
+      <tr><td>Softness</td><td>Soft and smooth</td><td>Very soft</td></tr>
+      <tr><td>Main applications</td><td>Denim, shirts, bedding</td><td>Underwear, clothing, sportswear</td></tr>
+    </tbody>
+  </table>
+
+  <!-- References -->
+  <div class="reference">
+    <strong>References:</strong>
+    <ul style="margin-top:0.3rem;">
+      <li>Lenzing – Fibre Production Technologies</li>
+      <li>Modal Fibre – Technical Classification</li>
+      <li>Lyocell Fibre – Technical Classification</li>
+    </ul>
+  </div>
+
+  <!-- final subtle disclaimer (still maroon) -->
+  <div class="disclaimer">
+    <p style="margin-bottom:0;">All statements are based on the provided text and references. TENCEL™ is a trademark of Lenzing AG. Manufacturer-reported comparisons should be evaluated with methodology in mind.</p>
+  </div>
+
+</div>
+</body>
+</html>
